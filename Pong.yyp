@@ -34,6 +34,7 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
+    {"id":{"name":"sndBall","path":"sounds/sndBall/sndBall.yy",},},
     {"id":{"name":"sprBall","path":"sprites/sprBall/sprBall.yy",},},
     {"id":{"name":"objBall","path":"objects/objBall/objBall.yy",},},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},},
