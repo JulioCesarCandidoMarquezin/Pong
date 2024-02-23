@@ -1,0 +1,2 @@
+global.started = true
+winner = "";
