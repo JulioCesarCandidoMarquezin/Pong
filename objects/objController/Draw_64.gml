@@ -3,11 +3,24 @@ draw_set_valign(fa_middle);
 draw_set_halign(fa_center);
 draw_set_font(fnt);
 
-if global.started {
+if string_length(winner) > 1 {
+	if global.started {
+		alarm[1] = room_speed;
+	}
+	draw_text(room_width/2, room_height/4, winner + " Win"); 
+	global.started = false;
+	ready_set_go = false;
+	global.player1.points = 0;
+	global.player2.points = 0;
+}
+
+if (global.started || !ready_set_go) and string_length(winner) < 1 {
 	draw_text(room_width/4, room_height/6, string(global.player1.points));
 	draw_text(room_width/4 * 3, room_height/6, string(global.player2.points));
 	ready_set_go_timer = room_speed * 2;
-} else {
+}
+
+if ready_set_go {
 	var ready_go_text = ""
 
 	if (room_speed * 2 - (room_speed * 2 / 3) < ready_set_go_timer) {

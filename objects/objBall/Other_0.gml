@@ -1,4 +1,4 @@
-#region Saída da tela e marcação de pontos
+#region Marcação de pontos
 if x < 0 {
 	global.player2.points += 1
 }
@@ -18,5 +18,9 @@ with global.player2 {
 	y = ystart
 }
 instance_create_layer(xstart, ystart, "Instances", objBall)
-instance_destroy()
 #endregion
+
+global.started = false;
+objController.alarm[0] = room_speed
+
+instance_destroy()
